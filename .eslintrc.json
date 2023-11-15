@@ -3,11 +3,14 @@
     "es2021": true,
     "node": true
   },
-  "extends": "xo",
+  "extends": ["xo", "prettier"],
   "overrides": [
     {
       "extends": ["xo-typescript", "prettier"],
-      "files": ["*.ts", "*.tsx"]
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "@typescript-eslint/consistent-type-definitions": ["error", "interface"]
+      }
     }
   ],
   "parserOptions": {
@@ -15,6 +18,8 @@
     "sourceType": "module"
   },
   "rules": {
+    "no-unused-vars": "error",
+    "no-implicit-coercion": "off",
     "new-cap": [
       "error",
       {
