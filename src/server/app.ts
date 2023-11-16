@@ -10,11 +10,13 @@ const port = process.env.PORT ?? 1337;
 app.get("/", pingRouter);
 app.use(resourceNotFound);
 
-console.log(
-  chalk.greenBright.bold(
-    `Server launched on ${chalk.yellow(`http://127.0.0.1:${port}`)}`,
-  ),
-);
-app.listen(port);
+export const startServer = (port: string) => {
+  app.listen(port);
+  console.log(
+    chalk.greenBright.bold(
+      `Server launched on ${chalk.yellow(`http://127.0.0.1:${port}`)}`,
+    ),
+  );
+};
 
 export default app;
