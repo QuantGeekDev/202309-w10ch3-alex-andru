@@ -1,5 +1,5 @@
 import { Router } from "express";
-import MicrogreensController from "../../feature/microgreens/controller/MicrogreensController.js";
+import MicrogreensController from "./controller/MicrogreensController.js";
 
 const microgreensRouter = Router();
 const microgreensController = new MicrogreensController();
