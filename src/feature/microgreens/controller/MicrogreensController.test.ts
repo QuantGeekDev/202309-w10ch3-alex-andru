@@ -12,6 +12,7 @@ describe("Given a MicrogreensController getMicrogreens method", () => {
         status: jest.fn().mockReturnThis(),
         json: jest.fn(),
       };
+
       microgreensController.getMicrogreens(req as Request, res as Response);
 
       expect(res.status).toHaveBeenCalledWith(expectedStatusCode);
