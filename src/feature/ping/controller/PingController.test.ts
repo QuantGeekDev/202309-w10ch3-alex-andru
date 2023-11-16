@@ -10,17 +10,15 @@ describe("Given a PingController method getPing", () => {
       const expectedMessage = "✅";
       const req = {};
 
-      const res: Pick<Response, "json" | "status"> = {
-        status: jest.fn().mockReturnValue({ json: jest.fn() }),
-        json: jest.fn(),
+      const res: Pick<Response, "send" | "status"> = {
+        status: jest.fn().mockReturnThis(),
+        send: jest.fn(),
       };
 
       pingController.getPing(req as Request, res as Response);
 
       expect(res.status).toHaveBeenCalledWith(expectedStatusCode);
-      expect(res.status(200).json).toHaveBeenCalledWith({
-        message: expectedMessage,
-      });
+      expect(res.status(200).send).toHaveBeenCalledWith(expectedMessage);
     });
   });
 });
