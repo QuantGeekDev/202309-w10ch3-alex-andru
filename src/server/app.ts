@@ -3,9 +3,8 @@ import "dotenv/config";
 import chalk from "chalk";
 
 const app = express();
-const port = process.env.PORT ?? 1337;
 
-export const startServer = (port: string) => {
+export const startServer = (port: number) => {
   app.listen(port);
   console.log(
     chalk.greenBright.bold(
