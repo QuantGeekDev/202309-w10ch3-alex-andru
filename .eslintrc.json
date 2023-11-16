@@ -11,6 +11,12 @@
       "rules": {
         "@typescript-eslint/consistent-type-definitions": ["error", "interface"]
       }
+    },
+    {
+      "files": ["src/**/model/*.ts", "src/**/mocks/microgreens/*.ts"],
+      "rules": {
+        "@typescript-eslint/naming-convention": "off"
+      }
     }
   ],
   "parserOptions": {
