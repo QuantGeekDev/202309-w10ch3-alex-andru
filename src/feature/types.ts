@@ -5,7 +5,7 @@ export interface Microgreen {
   total_light_days: number;
   approx_yield: number;
   blackout_time_days: number;
-  harvest_time_days: 10;
-  germination_time_days: 3;
-  daily_light_integral: 12;
+  harvest_time_days: number;
+  germination_time_days: number;
+  daily_light_integral: number;
 }
