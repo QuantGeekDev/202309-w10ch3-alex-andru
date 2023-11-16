@@ -18,7 +18,7 @@ describe("Given MicrogreensController's getMicrogreenById method", () => {
       microgreensRepository as MicrogreensRepository,
     );
 
-    const req: Partial<Request> = {
+    const req: Pick<Request, Partial<"params">> = {
       params: { id: "6555d6713fae3670216cb2af" },
     };
     const res: Pick<Response, "json" | "status"> = {
