@@ -6,7 +6,7 @@ import MicrogreensController from "../MicrogreensController";
 beforeEach(() => jest.clearAllMocks());
 
 describe("Given MicrogreensController's getMicrogreenById method", () => {
-  describe("When it receives a request with id '6555d6713fae3670216cb2af'", () => {
+  describe("When it receives a request with id '6555d6713fae3670216cb2af' ", () => {
     const microgreensRepository: Pick<
       MicrogreensRepository,
       "getMicrogreenById"

@@ -1,5 +1,5 @@
 import { type Request, type Response } from "express";
-import { type MicrogreensRepository } from "../../types";
+import { type MicrogreensRepository } from "../repository/types";
 
 class MicrogreensController {
   constructor(public microgreensRepository: MicrogreensRepository) {}
