@@ -3,11 +3,13 @@ import "dotenv/config";
 import chalk from "chalk";
 import pingRouter from "./router/pingRouter.js";
 import resourceNotFound from "./middlewares/errors/resourceNotFound.js";
+import microgreensRouter from "./router/microgreensRouter.js";
 
 const app = express();
 const port = process.env.PORT ?? 1337;
 
 app.get("/", pingRouter);
+app.use("/microgreens", microgreensRouter);
 app.use(resourceNotFound);
 
 export const startServer = (port: string) => {
