@@ -15,7 +15,6 @@ describe("Given a PingController method getPing", () => {
         status: jest.fn().mockReturnThis(),
         send: jest.fn(),
       };
-
       pingController.getPing(req as Request, res as Response);
 
       expect(res.status(expectedStatusCode).send).toHaveBeenCalledWith(
