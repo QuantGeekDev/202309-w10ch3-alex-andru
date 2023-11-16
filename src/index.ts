@@ -5,7 +5,7 @@ import chalk from "chalk";
 const port = process.env.PORT;
 
 if (!port) {
-  console.log(chalk.red("Port not defined"));
+  console.log(chalk.red.bold.bgYellowBright("Port not defined, shutting down"));
   process.exit();
 }
 
