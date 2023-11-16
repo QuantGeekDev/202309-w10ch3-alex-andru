@@ -1,7 +1,6 @@
 import { type Request, type Response } from "express";
 import { radishMicrosMock } from "../../../mocks/microgreens/microgreensMock";
-import { type MicrogreensRepository } from "../../../types";
-import MicrogreensMongooseRepository from "../../repository/MicrogreensRepository";
+import { type MicrogreensRepository } from "../../repository/types";
 import MicrogreensController from "../MicrogreensController";
 
 beforeEach(() => jest.clearAllMocks());

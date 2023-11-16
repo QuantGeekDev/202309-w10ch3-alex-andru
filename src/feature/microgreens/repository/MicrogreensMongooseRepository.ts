@@ -1,9 +1,6 @@
 import chalk from "chalk";
-import {
-  type MicrogreenStructure,
-  type MicrogreensRepository,
-} from "../../types";
-
+import { type MicrogreenStructure } from "../../types";
+import { type MicrogreensRepository } from "./types";
 import Microgreen from "../model/Microgreen.js";
 
 class MicrogreensMongooseRepository implements MicrogreensRepository {

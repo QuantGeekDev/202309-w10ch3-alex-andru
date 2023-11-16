@@ -9,8 +9,3 @@ export interface MicrogreenStructure {
   germination_time_days: number;
   daily_light_integral: number;
 }
-
-export interface MicrogreensRepository {
-  getMicrogreens: () => Promise<MicrogreenStructure[]>;
-  getMicrogreenById: (id: string) => Promise<MicrogreenStructure>;
-}
