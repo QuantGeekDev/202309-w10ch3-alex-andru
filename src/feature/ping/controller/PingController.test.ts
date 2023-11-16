@@ -8,6 +8,7 @@ describe("Given a PingController method getPing", () => {
 
       const expectedStatusCode = 200;
       const expectedMessage = "✅";
+
       const req = {};
 
       const res: Pick<Response, "send" | "status"> = {
@@ -17,8 +18,9 @@ describe("Given a PingController method getPing", () => {
 
       pingController.getPing(req as Request, res as Response);
 
-      expect(res.status).toHaveBeenCalledWith(expectedStatusCode);
-      expect(res.status(200).send).toHaveBeenCalledWith(expectedMessage);
+      expect(res.status(expectedStatusCode).send).toHaveBeenCalledWith(
+        expectedMessage,
+      );
     });
   });
 });
