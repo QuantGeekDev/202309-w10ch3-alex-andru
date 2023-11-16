@@ -7,5 +7,6 @@ const microgreensRepository = new MicrogreensMongooseRepository();
 const microgreensController = new MicrogreensController(microgreensRepository);
 
 microgreensRouter.get("/", microgreensController.getMicrogreens);
+microgreensRouter.get("/:id", microgreensController.getMicrogreenById);
 
 export default microgreensRouter;
