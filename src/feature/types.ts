@@ -1,4 +1,4 @@
-export interface Microgreen {
+export interface MicrogreenStructure {
   name: string;
   seed_type: string;
   seed_quantity: number;
@@ -8,4 +8,8 @@ export interface Microgreen {
   harvest_time_days: number;
   germination_time_days: number;
   daily_light_integral: number;
+}
+
+export interface MicrogreensRepository {
+  getMicrogreens: () => Promise<MicrogreenStructure[]>;
 }
