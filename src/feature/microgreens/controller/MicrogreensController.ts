@@ -1,5 +1,6 @@
 import { type Request, type Response } from "express";
 import { type MicrogreensRepository } from "../repository/types";
+import { type MicrogreenStructure } from "../../types";
 
 class MicrogreensController {
   constructor(public microgreensRepository: MicrogreensRepository) {}
@@ -32,6 +33,27 @@ class MicrogreensController {
 
       res.status(501).json({
         error: `Error getting microgreen with id ${id} from database`,
+      });
+    }
+  };
+
+  public addMicrogreen = async (
+    req: Request<{ microgreen: MicrogreenStructure }>,
+    res: Response,
+  ) => {
+    const microgreen: MicrogreenStructure = req.body as MicrogreenStructure;
+    try {
+      await this.microgreensRepository.addMicrogreen(microgreen);
+      res.status(201).json({
+        message: `Succesfully added ${microgreen.name} to database`,
+      });
+    } catch (error) {
+      console.error(
+        `Error adding microgreen ${microgreen.name} to database`,
+        error,
+      );
+      res.status(501).json({
+        message: `Error adding microgreen ${microgreen.name} to database`,
       });
     }
   };

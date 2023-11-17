@@ -23,6 +23,18 @@ class MicrogreensMongooseRepository implements MicrogreensRepository {
       throw new Error(`Error getting microgreen with id ${id} from database`);
     }
   };
+
+  addMicrogreen = async (
+    microgreen: MicrogreenStructure,
+  ): Promise<MicrogreenStructure> => {
+    try {
+      const response = await Microgreen.create(microgreen);
+      return response;
+    } catch (error) {
+      console.log(chalk.red(`Error adding ${microgreen.name} to database`));
+      throw new Error(`Error adding ${microgreen.name} to database`);
+    }
+  };
 }
 
 export default MicrogreensMongooseRepository;
