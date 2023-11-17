@@ -6,11 +6,10 @@ const app = express();
 
 export const startServer = (port: number) => {
   app.listen(port);
-  console.log(
-    chalk.greenBright.bold(
-      `Server launched on ${chalk.yellow(`http://127.0.0.1:${port}`)}`,
-    ),
-  );
+
+  const serverUrl = chalk.yellow(`http://127.0.0.1:${port}`);
+
+  console.log(chalk.greenBright.bold(`Server launched on ${serverUrl}`));
 };
 
 export default app;
