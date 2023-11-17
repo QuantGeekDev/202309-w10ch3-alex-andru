@@ -11,3 +11,5 @@ app.use("/microgreens", microgreensRouter);
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(resourceNotFound);
+
+app.disable("x-powered-by");
