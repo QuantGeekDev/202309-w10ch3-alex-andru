@@ -9,7 +9,7 @@ app.use(morgan("dev"));
 app.disable("x-powered-by");
 app.use(express.json());
 
-app.get("/", pingRouter);
+app.use("/", pingRouter);
 app.use("/microgreens", microgreensRouter);
 
 app.use(resourceNotFound);
