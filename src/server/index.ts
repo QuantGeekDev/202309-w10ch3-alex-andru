@@ -5,11 +5,10 @@ import resourceNotFound from "./middlewares/errors/resourceNotFound.js";
 import microgreensRouter from "../feature/microgreens/microgreensRouter.js";
 import express from "express";
 
+app.disable("x-powered-by");
 app.get("/", pingRouter);
 app.use("/microgreens", microgreensRouter);
 
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(resourceNotFound);
-
-app.disable("x-powered-by");
