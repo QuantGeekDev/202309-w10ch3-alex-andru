@@ -1,13 +1,12 @@
 import { type Request, type Response } from "express";
 import { radishMicrosMock } from "../../../mocks/microgreens/microgreensMock";
-import { type MicrogreensRepository } from "../../../types";
-import MicrogreensMongooseRepository from "../../repository/MicrogreensRepository";
+import { type MicrogreensRepository } from "../../repository/types";
 import MicrogreensController from "../MicrogreensController";
 
 beforeEach(() => jest.clearAllMocks());
 
 describe("Given MicrogreensController's getMicrogreenById method", () => {
-  describe("When it receives a request with id '6555d6713fae3670216cb2af'", () => {
+  describe("When it receives a request with id '6555d6713fae3670216cb2af' ", () => {
     const microgreensRepository: Pick<
       MicrogreensRepository,
       "getMicrogreenById"
@@ -19,7 +18,7 @@ describe("Given MicrogreensController's getMicrogreenById method", () => {
       microgreensRepository as MicrogreensRepository,
     );
 
-    const req: Partial<Request> = {
+    const req: Pick<Request, Partial<"params">> = {
       params: { id: "6555d6713fae3670216cb2af" },
     };
     const res: Pick<Response, "json" | "status"> = {

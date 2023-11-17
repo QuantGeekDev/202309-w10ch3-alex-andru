@@ -1,9 +1,6 @@
 import chalk from "chalk";
-import {
-  type MicrogreenStructure,
-  type MicrogreensRepository,
-} from "../../types";
-
+import { type MicrogreenStructure } from "../../types";
+import { type MicrogreensRepository } from "./types";
 import Microgreen from "../model/Microgreen.js";
 
 class MicrogreensMongooseRepository implements MicrogreensRepository {
@@ -20,7 +17,7 @@ class MicrogreensMongooseRepository implements MicrogreensRepository {
   getMicrogreenById = async (id: string): Promise<MicrogreenStructure> => {
     try {
       const microgreen = await Microgreen.findById(id);
-      return microgreen!;
+      return microgreen as MicrogreenStructure;
     } catch (error) {
       console.log(chalk.red(`Error getting microgreen with id ${id} from DB`));
       throw new Error(`Error getting microgreen with id ${id} from database`);

@@ -4,6 +4,9 @@
   "description": "",
   "main": "dist/index.js",
   "type": "module",
+  "engines": {
+    "node": "lts"
+  },
   "scripts": {
     "start": "node .",
     "start:dev": "node . --watch",
