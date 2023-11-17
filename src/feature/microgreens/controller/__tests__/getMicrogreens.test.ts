@@ -1,6 +1,6 @@
 import { type Response, type Request } from "express";
 import MicrogreensController from "../MicrogreensController";
-import { type MicrogreensRepository } from "../../../types";
+import { type MicrogreensRepository } from "../../repository/types";
 import { microgreensMock } from "../../../mocks/microgreens/microgreensMock";
 
 beforeEach(() => {
